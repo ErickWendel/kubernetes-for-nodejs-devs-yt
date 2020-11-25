@@ -3,7 +3,9 @@ git clone https://github.com/ErickWendel/nodejs-with-postgres-api-example
     npm run testAll 
     localhost:3000/documentation
 
-
+dockerhub.com 
+    -> create account 
+    
 docker login
 
 docker build -t app nodejs-with-postgres-api-example
@@ -46,7 +48,7 @@ mkdir kubeconfig
 
     minikube service api-heroes
     URL:/documentation
-    
+
     change run.sh 
         -> HOST
     npm run testAll
