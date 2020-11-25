@@ -1,0 +1,22 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "postgres-svc",
+        "labels": {
+            "version": "v1",
+            "app": "postgres"
+        }
+    },
+    "spec": {
+        "selector": {
+            "app": "postgres"
+        },
+        "type": "ClusterIP",
+        "ports": [{
+            "protocol": "TCP",
+            "port": 5432,
+            "targetPort": 5432
+        }]
+    }
+}

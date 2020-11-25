@@ -1,0 +1,52 @@
+git clone https://github.com/ErickWendel/nodejs-with-postgres-api-example
+    docker-compose up 
+    npm run testAll 
+    localhost:3000/documentation
+
+
+docker login
+
+docker build -t app nodejs-with-postgres-api-example
+
+docker tag app erickwendel/nodejs-with-postgres-api-example
+
+docker push erickwendel/nodejs-with-postgres-api-example
+
+# ------
+
+minikube start 
+kubectl get node
+kubectl get svc
+
+minikube dashboard
+
+mkdir kubeconfig 
+    create postgres.json 
+        kubectl create -f postgres.json
+        kubectl get sts -w
+        kubectl describe statefulset postgres
+        kubectl get pod 
+        kubectl describe pod 
+        
+    create postgres-svc.json 
+        kubectl create -f postgres.json
+        kubectl get svc -w
+        kubectl describe service postgres-svc
+
+    create api.json 
+            kubectl create -f api.json
+            kubectl get deploy -w
+            kubectl describe deploy api-heroes
+            kubectl get pod -w
+            kubectl logs api-heroes-76b6bd4d7c-559r5
+    create api-svc.json 
+                kubectl create -f api-svc.json
+                kubectl get svc -w
+                kubectl describe service api-heroes-svc
+
+    minikube service api-heroes
+    URL:/documentation
+    
+    change run.sh 
+        -> HOST
+    npm run testAll
